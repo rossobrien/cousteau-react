@@ -2,25 +2,24 @@ import React, { PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Header from '../components/Header/Header'
-import QueryView from '../components/QueryView/QueryView'
+import QueryTabs from '../components/QueryTabs/QueryTabs'
 import * as QueryActions from '../actions'
 
-const QueryPage = ({queries, queryId, actions}) => (
+const ListPage = ({queries, actions, filter}) => (
   <div>
-    <QueryView queries={queries} queryId={queryId} actions={actions} />
+    <QueryTabs queries={queries} actions={actions} filter={filter}/>
   </div>
 )
 
-QueryPage.propTypes = {
+ListPage.propTypes = {
   queries: PropTypes.array.isRequired,
-  queryId: PropTypes.number.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  filter: PropTypes.string,
 }
 
 const mapStateToProps = (state, ownProps) => ({
   queries: state.queries,
-  queryId: parseInt(ownProps.params.queryId)
-
+  filter: ownProps.params.filter
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -30,4 +29,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(QueryPage)
+)(ListPage)

@@ -5,7 +5,7 @@ export default class QueryList extends Component {
 
   render() {
     const { queries, actions } = this.props
-    
+
     return (
       <div className="query-list">
         {queries.map(query =>

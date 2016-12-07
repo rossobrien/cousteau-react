@@ -5,17 +5,17 @@ import Header from '../components/Header/Header'
 import QueryTabs from '../components/QueryTabs/QueryTabs'
 import * as QueryActions from '../actions'
 
-const App = ({queries, actions, filter}) => (
+const App = ({ children }) => (
   <div>
     <Header/>
-    <QueryTabs queries={queries} actions={actions} filter={filter}/>
+    {children}
   </div>
+  /*<QueryTabs queries={queries} actions={actions} filter={filter}/>*/
 )
 
 App.propTypes = {
-  queries: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
-  filter: PropTypes.string,
+  // Injected by React Router
+  children: PropTypes.node
 }
 
 const mapStateToProps = (state, ownProps) => ({

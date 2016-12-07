@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import { Link } from 'react-router'
 import { Row, Col } from 'antd'
 import QueryLikeButton from '../QueryLikeButton/QueryLikeButton'
 
@@ -10,7 +11,7 @@ export default class QueryItem extends Component {
   }
 
   render() {
-    const { query, likeQuery, runQuery } = this.props
+    const { query, likeQuery } = this.props
 
     return (
       <div className="query-item">
@@ -24,7 +25,7 @@ export default class QueryItem extends Component {
               <span>runs</span>
             </div>
           </Col>
-          <Col span={20} onDoubleClick={() => runQuery(query.id)}><a>{query.name}</a></Col>
+          <Col span={20}><Link to={"/query/"+query.id}>{query.name}</Link></Col>
         </Row>
       </div> 
     )
