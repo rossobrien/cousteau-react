@@ -52,12 +52,7 @@ export default function queries(state = initialState, action) {
 
     case ActionTypes.EDIT_QUERY:
       return state.map(query =>
-        query.id === action.id ?
-          { ...query, 
-            name: action.name,
-            query: action.query 
-          } :
-          query
+        query.id === action.query.id ? action.query : query
       )
 
     case ActionTypes.LIKE_QUERY:

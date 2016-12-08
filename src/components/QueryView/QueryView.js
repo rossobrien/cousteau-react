@@ -20,7 +20,7 @@ export default class QueryView extends Component {
     return (
       <div className="main-wrapper"> 
        
-        <QueryHeader query={query} likeQuery={actions.likeQuery} />
+        <QueryHeader query={query} likeQuery={actions.likeQuery} editQuery={actions.editQuery}/>
        
         <Row>
           <Col span={24}>
