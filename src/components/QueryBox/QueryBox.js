@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react'
-import { Input } from 'antd'
+import { Row, Col, Input } from 'antd'
+import SchemaBox from '../SchemaBox/SchemaBox'
 
 export default class QueryBox extends Component {
   static propTypes = {
@@ -22,7 +23,7 @@ export default class QueryBox extends Component {
 
   handleSave = e => {
     this.props.query.query = e.target.value.trim()
-    this.props.editQuery(this.props.query)
+    this.props.editQuery(this.props.query.id, this.props.query)
     this.setState({ editing: false })
   }
 
@@ -33,21 +34,32 @@ export default class QueryBox extends Component {
     if (this.state.editing)
     {
       element = (
-        <Input 
-          id={query.id} 
-          size="large"
-          type="textarea"
-          rows={4}
-          defaultValue={query.query} 
-          onChange={this.handleChange} 
-          onBlur={this.handleSave}
-          onPressEnter={this.handleSave} />
+        <Row>
+          <Col span={16}>
+            <Input 
+              id={query.id} 
+              size="large"
+              type="textarea"
+              rows={4}
+              defaultValue={query.query} 
+              onChange={this.handleChange} 
+              onBlur={this.handleSave}
+              onPressEnter={this.handleSave} />
+            </Col>
+            <Col span={6} offset={2}>
+              <SchemaBox />
+            </Col>
+          </Row>
       )
     }
     else
     {
       element = (
-        <pre onDoubleClick={this.handleDoubleClick}>{query.query}</pre>
+        <Row>
+          <Col span={24}>
+            <pre onDoubleClick={this.handleDoubleClick}>{query.query}</pre>
+          </Col>
+        </Row>
       )
     }
 

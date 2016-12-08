@@ -96,7 +96,7 @@ body
 	margin-bottom: 10px;
 }
 
-.query-box
+.query-box pre, .query-box textarea
 {
 	margin-bottom: 15px;
 }

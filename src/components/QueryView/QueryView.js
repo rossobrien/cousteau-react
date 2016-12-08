@@ -22,16 +22,14 @@ export default class QueryView extends Component {
        
         <QueryHeader query={query} likeQuery={actions.likeQuery} editQuery={actions.editQuery}/>
        
-        <Row>
-          <Col span={24}>
-            <QueryBox query={query} editQuery={actions.editQuery}/>
-          </Col>
-        </Row>
+        <QueryBox query={query} editQuery={actions.editQuery}/>
+        
         <Row>
           <Col span={8}>
             <QueryRunButton query={query} runQuery={actions.runQuery} />
           </Col>
         </Row>
+        
         <Row>
           <Col span={24}>
             <DataBox query={query}/>
