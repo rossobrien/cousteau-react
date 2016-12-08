@@ -20,6 +20,11 @@ body
     width: 100%;
 }
 
+.header a
+{
+	color: #B0BEC5;
+}
+
 .header h1
 {
 	font-size: 72px;
@@ -39,7 +44,7 @@ body
 .main-wrapper
 {
     background: #fff;
-    width: 92%;
+    width: 75%;
     margin: 0 auto;
     border-radius: 4px;
     overflow: hidden;
@@ -58,6 +63,17 @@ body
 	font-size: 20px;
 }
 
+.like-button
+{
+	text-align: center;
+}
+
+.like-button span
+{
+	display: block;
+	font-size: 14px;
+}
+
 .run-count
 {
 	text-align: center;
@@ -69,13 +85,25 @@ body
 	font-size: 14px;
 }
 
-.like-button
+.query-header
 {
-	text-align: center;
+	padding-bottom: 10px;
+	text-align: left;
 }
 
-.like-button span
+.run-button
 {
-	display: block;
-	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.query-box pre
+{
+	font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+    margin-bottom: 10px;
+    overflow: auto;
+    padding: 5px;
+    width: auto;
+    line-height: 15px;
+    background-color: #fafafa;
+    border: solid 1px #ddd;
 }

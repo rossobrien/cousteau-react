@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import { Link } from 'react-router'
 
 export default class Header extends Component {
 
@@ -6,8 +7,10 @@ export default class Header extends Component {
     return (
       <div>
         <header className="header">
-          <h1>Cousteau</h1>
-          <h2>data explorer</h2>
+          <Link to="/">
+            <h1>Cousteau</h1>
+            <h2>data explorer</h2>
+          </Link>
         </header>
       </div>
     )
