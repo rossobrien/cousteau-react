@@ -24,7 +24,7 @@ export default class QueryView extends Component {
        
         <Row>
           <Col span={24}>
-            <QueryBox query={query} />
+            <QueryBox query={query} editQuery={actions.editQuery}/>
           </Col>
         </Row>
         <Row>

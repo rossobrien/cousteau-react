@@ -24,7 +24,7 @@ export default class QueryHeader extends Component {
 
   handleSave = e => {
     this.props.query.name = e.target.value.trim()
-    this.props.editQuery(this.props.query.id, this.props.query)
+    this.props.editQuery(this.props.query)
     this.setState({ editing: false })
   }
 
@@ -47,7 +47,7 @@ export default class QueryHeader extends Component {
     else
     {
       element = (
-        <h2 onDoubleClick={() => this.handleDoubleClick()}>{query.name}</h2>
+        <h2 onDoubleClick={this.handleDoubleClick}>{query.name}</h2>
       )
     }
 

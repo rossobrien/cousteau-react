@@ -96,10 +96,14 @@ body
 	margin-bottom: 10px;
 }
 
+.query-box
+{
+	margin-bottom: 15px;
+}
+
 .query-box pre
 {
 	font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
-    margin-bottom: 10px;
     overflow: auto;
     padding: 5px;
     width: auto;
