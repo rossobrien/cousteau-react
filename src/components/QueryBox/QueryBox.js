@@ -35,18 +35,18 @@ export default class QueryBox extends Component {
     {
       element = (
         <Row>
-          <Col span={16}>
+          <Col span={18}>
             <Input 
               id={query.id} 
               size="large"
               type="textarea"
-              rows={4}
+              rows={5}
               defaultValue={query.query} 
               onChange={this.handleChange} 
               onBlur={this.handleSave}
               onPressEnter={this.handleSave} />
             </Col>
-            <Col span={6} offset={2}>
+            <Col span={5} offset={1}>
               <SchemaBox />
             </Col>
           </Row>

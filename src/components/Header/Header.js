@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { Link } from 'react-router'
+import logo from '../../styles/logo.png'
 
 export default class Header extends Component {
 
@@ -8,8 +9,7 @@ export default class Header extends Component {
       <div>
         <header className="header">
           <Link to="/">
-            <h1>Cousteau</h1>
-            <h2>data explorer</h2>
+            <img alt="logo" src={logo} />
           </Link>
         </header>
       </div>
