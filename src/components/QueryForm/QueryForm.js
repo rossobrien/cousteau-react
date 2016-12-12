@@ -10,9 +10,22 @@ export default class QueryForm extends Component {
     const { query } = this.props
 
     return (   
-      <div className="query-form">
-        <Input type="textarea" rows={4} value={query.query}/>
-      </div>
+      <Row>
+        <Col span={18}>
+          <Input 
+            id={query.id} 
+            size="large"
+            type="textarea"
+            rows={5}
+            defaultValue={query.query} 
+           /* onChange={this.handleChange} 
+            onBlur={this.handleSave}
+            onPressEnter={this.handleSave}*/ />
+        </Col>
+        <Col span={5} offset={1}>
+          <SchemaBox />
+        </Col>
+      </Row>
     )
   }
 }

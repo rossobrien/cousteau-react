@@ -45,11 +45,11 @@ export default class QueryBox extends Component {
               onChange={this.handleChange} 
               onBlur={this.handleSave}
               onPressEnter={this.handleSave} />
-            </Col>
-            <Col span={5} offset={1}>
-              <SchemaBox />
-            </Col>
-          </Row>
+          </Col>
+          <Col span={5} offset={1}>
+            <SchemaBox />
+          </Col>
+        </Row>
       )
     }
     else

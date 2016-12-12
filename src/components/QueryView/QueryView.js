@@ -7,6 +7,15 @@ import QueryRunButton from '../QueryRunButton/QueryRunButton'
 import DataBox from '../DataBox/DataBox'
 
 export default class QueryView extends Component { 
+  state = {
+    data: []
+  }
+
+  runQuery(id) {
+    this.props.actions.runQuery(id)
+    this.state.data = [{id: 1, name: 'test'}, {id: 2, name: 'testing'}]
+  }
+
   render() {
     const { queries, queryId, actions } = this.props
 
@@ -26,13 +35,13 @@ export default class QueryView extends Component {
         
         <Row>
           <Col span={8}>
-            <QueryRunButton query={query} runQuery={actions.runQuery} />
+            <QueryRunButton query={query} runQuery={() => this.runQuery(query.id)} />
           </Col>
         </Row>
-        
+
         <Row>
           <Col span={24}>
-            <DataBox query={query}/>
+            <DataBox query={query} data={this.state.data}/>
           </Col>
         </Row>
       </div>
